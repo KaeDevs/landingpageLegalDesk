@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalDesk - All-in-one Legal Practice Management App</title>
+    <meta name="description" content="Comprehensive legal practice management solution for lawyers and advocates. Streamline case management, client tracking, and billing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'legal-dark': '#0D1117',
+                        'legal-blue': '#1C2D5A',
+                        'legal-accent': '#4B7BEC',
+                        'legal-gray': '#161B22',
+                        'legal-light': '#21262D'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0D1117 0%, #1C2D5A 100%);
+        }
+        .glass-effect {
+            background: rgba(28, 45, 90, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 123, 236, 0.2);
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        .phone-mockup {
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-legal-dark text-white scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-balance-scale text-legal-accent text-2xl"></i>
+                    <span class="text-xl font-bold">LegalDesk</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#download" class="hover:text-legal-accent transition-colors">Download</a>
+                    <a href="#features" class="hover:text-legal-accent transition-colors">Features</a>
+                    <a href="#how-it-works" class="hover:text-legal-accent transition-colors">How It Works</a>
+                    <!-- <a href="#testimonials" class="hover:text-legal-accent transition-colors">Testimonials</a> -->
+                    <a href="#gallery" class="hover:text-legal-accent transition-colors">Gallery</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full glass-effect z-40">
+        <div class="px-4 py-6 space-y-4">
+            <a href="#download" class="block hover:text-legal-accent transition-colors">Download</a>
+            <a href="#features" class="block hover:text-legal-accent transition-colors">Features</a>
+            <a href="#how-it-works" class="block hover:text-legal-accent transition-colors">How It Works</a>
+            <!-- <a href="#testimonials" class="block hover:text-legal-accent transition-colors">Testimonials</a> -->
+            <a href="#gallery" class="block hover:text-legal-accent transition-colors">Gallery</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id = "download" class="gradient-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                            <span class="text-legal-accent">Legal</span>Desk
+                        </h1>
+                        <p class="text-2xl md:text-3xl text-gray-300 font-light">
+                            All-in-one Legal Practice Management App
+                        </p>
+                        <p class="text-lg text-gray-400 max-w-lg">
+                            Streamline your legal practice with comprehensive case management, client tracking, and automated billing. Built for modern legal professionals.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=my.legal.desk&hl=en_IN" 
+                           class="inline-flex items-center justify-center px-8 py-4 bg-legal-accent hover:bg-blue-600 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-google-play mr-2"></i>
+                            Download Now
+                        </a>
+                        <a href="#contact" 
+                           class="inline-flex items-center justify-center px-8 py-4 border border-legal-accent text-legal-accent hover:bg-legal-accent hover:text-white rounded-full font-semibold transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <span>Best Rated</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-download text-legal-accent mr-1"></i>
+                            <span>10+ Downloads</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="phone-mockup rounded-3xl p-4 mx-auto max-w-sm">
+                        <div class="bg-legal-gray rounded-2xl p-2">
+                            <div class="bg-gradient-to-br from-legal-accent to-blue-600 rounded-xl p-8 text-center">
+                                <!-- Replace icon with logo image -->
+                                <!-- <img src="logo.png" alt="LegalDesk Logo" class="w-64 h-64 mx-auto mb-4 rounded-full" /> -->
+                                <img src="logo.png" alt="LegalDesk Logo" class="w-64 h-64 mx-auto mb-4 rounded-2xl" />
+                                
+                                <!-- <h3 class="text-xl font-bold mb-2">LegalDesk</h3>
+                                <p class="text-sm opacity-90">Practice Management</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-20 bg-legal-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Key Features</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Everything you need to manage your legal practice efficiently
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Management -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-folder-open text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Case Management</h3>
+                    <p class="text-gray-400">Organize cases, track deadlines, and manage documents with ease. Keep everything in one place.</p>
+                </div>
+
+                <!-- Client Management -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Client Management</h3>
+                    <p class="text-gray-400">Maintain client profiles, communication history, and case assignments in a centralized system.</p>
+                </div>
+
+                <!-- Task & Calendar -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Task & Calendar Integration</h3>
+                    <p class="text-gray-400">Schedule hearings, set reminders, and never miss important deadlines with integrated calendar.</p>
+                </div>
+
+                <!-- Time Tracking -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Time Tracking</h3>
+                    <p class="text-gray-400">Track billable hours automatically and generate accurate time reports for clients.</p>
+                </div>
+
+                <!-- Invoicing -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Invoicing & Expense Tracking</h3>
+                    <p class="text-gray-400">Generate professional invoices, track expenses, and manage payments seamlessly.</p>
+                </div>
+
+                <!-- Google Drive Sync -->
+                <div class="feature-card glass-effect rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-google-drive text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Google Drive Document Sync</h3>
+                    <p class="text-gray-400">Sync all your legal documents with Google Drive for secure, cloud-based storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Get started with LegalDesk in just a few simple steps
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Sign Up</h3>
+                    <p class="text-gray-400">Create your account and set up your practice profile in minutes</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Add Cases</h3>
+                    <p class="text-gray-400">Import existing cases or create new ones with all relevant details</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Track Work</h3>
+                    <p class="text-gray-400">Monitor progress, track time, and manage tasks efficiently</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-legal-accent rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Bill Clients</h3>
+                    <p class="text-gray-400">Generate invoices and get paid faster with automated billing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section id="testimonials" class="py-20 bg-legal-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">What Lawyers Say</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Join thousands of legal professionals who trust LegalDesk
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-legal-accent rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Adv. Sarah Johnson</h4>
+                            <p class="text-sm text-gray-400">Criminal Law</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">"LegalDesk has transformed how I manage my practice. The case management and time tracking features have saved me hours every week."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-legal-accent rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Adv. Michael Chen</h4>
+                            <p class="text-sm text-gray-400">Corporate Law</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">"The invoicing and expense tracking features are excellent. I can now focus on my cases instead of paperwork."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-legal-accent rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Adv. Priya Sharma</h4>
+                            <p class="text-sm text-gray-400">Family Law</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">"The Google Drive integration is a game-changer. All my documents are organized and accessible from anywhere."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Screenshot Gallery -->
+    <section id="gallery" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">App Screenshots</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    See LegalDesk in action with these key screens
+                </p>
+            </div>
+        
+            <!-- One unified grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                <!-- Screenshot 1 -->
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s1.png" alt="Screenshot 1" class="rounded-xl w-full" />
+                    </div>
+                </div>
+        
+                <!-- Screenshot 2 -->
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s2.png" alt="Screenshot 2" class="rounded-xl w-full" />
+                    </div>
+                </div>
+        
+                <!-- Screenshot 3 -->
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s3.png" alt="Screenshot 3" class="rounded-xl w-full" />
+                    </div>
+                </div>
+        
+                <!-- Screenshot 4 -->
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s4.png" alt="Screenshot 4" class="rounded-xl w-full" />
+                    </div>
+                </div>
+        
+                <!-- Screenshot 5 -->
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s5.png" alt="Screenshot 5" class="rounded-xl w-full" />
+                    </div>
+                </div>
+
+                <div class="phone-mockup rounded-3xl p-4">
+                    <div class="bg-legal-gray rounded-2xl p-2">
+                        <img src="s6.png" alt="Screenshot 5" class="rounded-xl w-full" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- Final CTA / Contact Section -->
+    <section id="contact" class="py-20 bg-legal-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Practice?</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Join thousands of legal professionals who have already digitized their practice with LegalDesk
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold">Get Started Today</h3>
+                        <p class="text-gray-400">
+                            Download LegalDesk from the Google Play Store and start managing your legal practice more efficiently.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=my.legal.desk&hl=en_IN" 
+                           class="inline-flex items-center justify-center px-8 py-4 bg-legal-accent hover:bg-blue-600 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-google-play mr-2"></i>
+                            Download on Google Play
+                        </a>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="mailto:idealinfoway@gmail.com" class="flex items-center text-gray-400 hover:text-legal-accent transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            idealinfoway@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/kavin-m--/" class="flex items-center text-gray-400 hover:text-legal-accent transition-colors">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <form action="https://formsubmit.co/idealinfoway@gmail.com" method="POST" class="space-y-4">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New message from LegalDesk!">
+                        
+                        <div>
+                            <input type="text" name="name" placeholder="Your Name" 
+                                   class="w-full px-4 py-3 bg-legal-dark border border-gray-600 rounded-lg focus:border-legal-accent focus:outline-none">
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Your Email" 
+                                   class="w-full px-4 py-3 bg-legal-dark border border-gray-600 rounded-lg focus:border-legal-accent focus:outline-none">
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Your Message" rows="4" 
+                                      class="w-full px-4 py-3 bg-legal-dark border border-gray-600 rounded-lg focus:border-legal-accent focus:outline-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full px-6 py-3 bg-legal-accent hover:bg-blue-600 rounded-lg font-semibold transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-legal-dark py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-balance-scale text-legal-accent text-xl"></i>
+                    <span class="text-lg font-bold">LegalDesk</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#download" class="hover:text-legal-accent transition-colors">Download</a>
+                    <a href="#features" class="hover:text-legal-accent transition-colors">Features</a>
+                    <a href="#how-it-works" class="hover:text-legal-accent transition-colors">How It Works</a>
+                    <!-- <a href="#testimonials" class="hover:text-legal-accent transition-colors">Testimonials</a> -->
+                    <a href="#contact" class="hover:text-legal-accent transition-colors">Contact</a>
+                </div>
+            </div>
+            <!-- <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
+                <p>&copy; 2024 LegalDesk. All rights reserved. | Comprehensive Legal Practice Management Solution</p>
+            </div> -->
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html> 
